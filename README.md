@@ -52,7 +52,7 @@ pip install -r requirements.txt
 
 Copy code
 
-python app.py
+python block chain.py
 
 Access the application in your browser at http://localhost:5000.
 
