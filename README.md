@@ -40,6 +40,7 @@ Validation:
 
 bash
 Copy code
+
 git clone https://github.com/your-username/voting-blockchain-app.git
 
 ### Install dependencies:
@@ -47,12 +48,15 @@ git clone https://github.com/your-username/voting-blockchain-app.git
 bash
 
 Copy code:
+
 pip install -r requirements.txt
 Run the application:
 
 bash
 Copy code
+
 python app.py
+
 Access the application in your browser at http://localhost:5000.
 
 ## Note:
