@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vote Page</title>
+    <style>
+        body {
+            background-image: url("{{ url_for('static', filename='wallpaper.jpg') }}");
+            background-size: cover;
+            background-position: center;
+            background-color: #1c1c1c;
+            color: rgb(0, 0, 0);
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .border-overlay {
+            content: "";
+            position: absolute;
+            top: 10%;
+            left: 10%;
+            width: 80%;
+            height: 80%;
+            background: inherit;
+            z-index: -1;
+            border: 2px solid rgb(52, 88, 219);
+            box-sizing: border-box;
+            filter: blur(10px);
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        h2, form {
+            position: relative;
+            z-index: 1;
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        h2 {
+            color: #000000;
+            font-size: 36px;
+        }
+
+        form {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input, select {
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #3458db;
+            background-color: #2c3e50;
+            color: white;
+            border-radius: 5px;
+        }
+
+        .error-message {
+            color: #e74c3c;
+            margin-top: 10px;
+        }
+
+        button {
+            background-color: #3458db;
+            color: rgb(0, 0, 0);
+            padding: 10px 15px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+            animation: pulse 2s infinite;
+        }
+
+        button:hover {
+            background-color: #2933b9;
+            transform: scale(1.05);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="border-overlay"></div>
+    <h2>Vote Page</h2>
+    <form method="post" action="/add_block">
+        {% if error_message %}
+            <p class="error-message">{{ error_message }}</p>
+        {% endif %}
+        <label for="candidate_name">Candidate Name:</label>
+        <select id="candidate_name" name="candidate_name" required>
+            {% for candidate in candidates %}
+                <option value="{{ candidate }}">{{ candidate }}</option>
+            {% endfor %}
+        </select>
+        <br>
+        <label for="voter_id">Voter ID:</label>
+        <input type="text" id="voter_id" name="voter_id" required>
+        <br>
+        <button type="submit">Vote</button>
+    </form>
+
+    <!-- Add at the end of the body -->
+    <script>
+        // You can add relevant JavaScript code here
+    </script>
+</body>
+</html>

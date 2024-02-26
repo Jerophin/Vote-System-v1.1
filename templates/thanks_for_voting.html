@@ -1,0 +1,93 @@
+<!-- thanks_for_voting.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thanks for Voting</title>
+    <style>
+        body {
+            background-image: url("{{ url_for('static', filename='wallpaper.jpg') }}");
+            background-size: cover;
+            background-position: center;
+            background-color: #1c1c1c;
+            color: rgb(0, 0, 0);
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .border-overlay {
+            content: "";
+            position: absolute;
+            top: 10%;
+            left: 10%;
+            width: 80%;
+            height: 80%;
+            background: inherit;
+            z-index: -1;
+            border: 2px solid rgba(52, 152, 219, 1);
+            box-sizing: border-box;
+            filter: blur(10px);
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        h2, p, a {
+            position: relative;
+            z-index: 1;
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        h2 {
+            color: #000000;
+            font-size: 36px; /* Adjust the font size as needed */
+        }
+
+        p {
+            margin-top: 20px;
+            font-size: 18px;
+            text-align: center;
+        }
+
+        a {
+            color: rgb(0, 0, 0);
+            text-decoration: none;
+            background-color: #3458db;
+            padding: 10px;
+            border-radius: 50px; /* Make the button rounded */
+            transition: background-color 0.3s, transform 0.3s, border-radius 0.3s;
+            margin-top: 20px;
+            display: inline-block;
+        }
+
+        a:hover {
+            background-color: #2943b9;
+            transform: scale(1.05);
+            border-radius: 10px; /* Adjust the border-radius for the animation effect */
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="border-overlay"></div>
+    <h2>Thanks for Voting!</h2>
+    <p>Your vote has been successfully recorded.</p>
+    <a href="/">Return to Home</a>
+</body>
+</html>

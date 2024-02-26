@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vote Details</title>
+    <style>
+        body {
+            background-image: url("{{ url_for('static', filename='wallpaper.jpg') }}");
+            background-size: cover;
+            background-position: center;
+            background-color: #1c1c1c;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        h2, table {
+            position: relative;
+            z-index: 1;
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        h2 {
+            text-align: center;
+            color: #000000;
+            margin-top: 0;
+            font-size: 36px; /* Adjust the font size as needed */
+        }
+
+        table {
+            width: 80%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            overflow-x: auto;
+        }
+
+        th, td {
+            border: 1px solid #3458db;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #3458db;
+            color: rgb(0, 0, 0);
+        }
+
+        tr:nth-child(even) {
+            background-color: #2c3e50;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h2>Acknowledgement</h2>
+    <table>
+        <tr>
+            <th>Index</th>
+            <th>Timestamp</th>
+            <th>Candidate Name</th>
+            <th>Voter ID</th>
+            <th>Previous Hash</th>
+            <th>Hash</th>
+        </tr>
+        {% for block in blockchain %}
+            <tr>
+                <td>{{ block.index }}</td>
+                <td>{{ block.timestamp }}</td>
+                <td>{{ block.candidate_name }}</td>
+                <td>{{ block.voter_id }}</td>
+                <td>{{ block.previous_hash }}</td>
+                <td>{{ block.hash }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
