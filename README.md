@@ -50,7 +50,8 @@ bash
 Copy code:
 
 pip install -r requirements.txt
-Run the application:
+
+### Run the application:
 
 bash
 Copy code
