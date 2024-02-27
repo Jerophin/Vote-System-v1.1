@@ -1,4 +1,4 @@
-# Voting Blockchain Application
+# Blockchain Voting Application
 This is a simple blockchain-based voting application built using Flask, allowing users to cast votes for different candidates. The application utilizes a blockchain to store and secure voting data. Below is an overview of the files and functionalities:
 
 ## Files:
