@@ -57,6 +57,9 @@ python block chain.py
 Access the application in your browser at http://localhost:5000.
 
 ## Note:
+
+Recommended to use in linux based os.
+
 Ensure that you replace the placeholder values such as PASSWORD and CSV_FILE_PATH with your actual password and file paths in the code.
 
 This application is meant for educational purposes and may require additional security measures for production use.
