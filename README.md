@@ -40,7 +40,7 @@ Validation:
 
 Copy code
 
-git clone https://github.com/your-username/voting-blockchain-app.git
+git clone https://github.com/your-username/voting-system-v1.1.git
 
 ### Install dependencies:
 
