@@ -46,7 +46,7 @@ git clone https://github.com/your-username/Vote-System-v1.1.git
 
 Copy code:
 
-pip install -r requirements.txt
+pip install flask
 
 ### Run the application:
 
