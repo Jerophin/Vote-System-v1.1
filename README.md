@@ -56,6 +56,12 @@ python block chain.py
 
 Access the application in your browser at http://localhost:5000.
 
+### Run the application in windows:
+
+Run start.bat in windows
+
+Access the application in your browser at http://localhost:5000.
+
 ## Note:
 
 Recommended to use in linux based os.
